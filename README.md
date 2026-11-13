@@ -1,0 +1,1 @@
+# detector-auth.log
