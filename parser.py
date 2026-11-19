@@ -1,16 +1,17 @@
 import re
 
-patron = r"(Failed|Accepted) password for (?:invalid user )?(\S+) from (\S+) port (\d+)"
+patron = r"^(\S+) .*?(Failed|Accepted) password for (?:invalid user )?(\S+) from (\S+) port (\d+)"
 
 def parsear_linea(linea):
     m = re.search(patron, linea)
     if m is None:
         return None
     return {
-        "resultado": m.group(1),
-        "usuario": m.group(2),
-        "ip": m.group(3),
-        "puerto": m.group(4),
+	"fecha": m.group(1),
+        "resultado": m.group(2),
+        "usuario": m.group(3),
+        "ip": m.group(4),
+        "puerto": m.group(5),
     }
 
 eventos = []
