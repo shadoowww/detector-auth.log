@@ -1,12 +1,25 @@
 import re
-lineas = [
-    "Failed password for invalid user user1123123 from ::1 port 39132 ssh2",
-    "Failed password for kali from ::1 port 34090 ssh2",
-    "Accepted password for kali from ::1 port 34090 ssh2",
-    "Failed password for invalid user svc-backup from 203.0.113.5 port 40022 ssh2",
-]
+
 patron = r"(Failed|Accepted) password for (?:invalid user )?(\S+) from (\S+) port (\d+)"
- 
-for linea in lineas:
+
+def parsear_linea(linea):
     m = re.search(patron, linea)
-    print(m.groups())
+    if m is None:
+        return None
+    return {
+        "resultado": m.group(1),
+        "usuario": m.group(2),
+        "ip": m.group(3),
+        "puerto": m.group(4),
+    }
+
+eventos = []
+with open("sample/auth.log") as f:
+    for linea in f:
+        evento = parsear_linea(linea)
+        if evento is not None:
+            eventos.append(evento)
+
+print(len(eventos))
+for e in eventos:
+    print(e)
