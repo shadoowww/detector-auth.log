@@ -1,1 +1,14 @@
-
+2026-11-13T11:49:18-05:00 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+2026-11-13T11:49:18-05:00 kali sshd[17293]: Server listening on 0.0.0.0 port 22.
+2026-11-13T11:49:18-05:00 kali sshd[17293]: Server listening on :: port 22.
+2026-11-13T11:49:18-05:00 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+2026-11-13T11:50:34-05:00 kali sshd-session[18086]: Invalid user user1123123 from ::1 port 39132
+2026-11-13T11:50:36-05:00 kali sshd-session[18086]: pam_unix(sshd:auth): check pass; user unknown
+2026-11-13T11:50:36-05:00 kali sshd-session[18086]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=::1
+2026-11-13T11:50:38-05:00 kali sshd-session[18086]: Failed password for invalid user user1123123 from ::1 port 39132 ssh2
+2026-11-13T11:50:44-05:00 kali sshd-session[18086]: pam_unix(sshd:auth): check pass; user unknown
+2026-11-13T11:50:45-05:00 kali sshd-session[18086]: Failed password for invalid user user1123123 from ::1 port 39132 ssh2
+2026-11-13T11:50:48-05:00 kali sshd-session[18086]: pam_unix(sshd:auth): check pass; user unknown
+2026-11-13T11:50:49-05:00 kali sshd-session[18086]: Failed password for invalid user user1123123 from ::1 port 39132 ssh2
+2026-11-13T11:50:50-05:00 kali sshd-session[18086]: Connection closed by invalid user user1123123 ::1 port 39132 [preauth]
+2026-11-13T11:50:50-05:00 kali sshd-session[18086]: PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=::1
